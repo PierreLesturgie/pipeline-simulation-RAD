@@ -4,7 +4,7 @@
 
 
 
-### - Step 1. Simulation of N haploid individuals from a demographic model 
+## (1) Simulation of N haploid individuals from a demographic model 
 Folder ***Step1_simulation***
 
 Five files are needed, they should be present in the same folder. The demographic model is specified in the file *.par*. 
@@ -16,7 +16,7 @@ Five files are needed, they should be present in the same folder. The demographi
 **NOTE:** in the *simula_whole_genome_arp_optimised_spezza.r* you need to specify the length of the sequence to be obtained (which needs to correspond to the *.par* file).
 
 
-### - Step 2. Digestion 
+## (2) Digestion 
 Folder ***Step2_digestion***
 
 To perform digestion: 
@@ -27,5 +27,13 @@ To perform digestion:
 **NOTE:** You need to specify where are the sequences generated in step 1 in the file read_seq.py (repertoire =).
   
   
-### - Step 3. 
-files in the folder script_genera_fastq_brand_new. Files need to be executed where the set* folders are. First, execute lancia_100job.sh which will run the R script simula_reads_funzione_da_wholegenome.r to all loci. In the R function within the script (crea_reads_simcoal), four arguments can be set: 1) the emplacement of the file (which need not to be changed), the length of the restriction enzyme used, the mean and standard deviation of the normal distribution from which to extract the N° of reads per individual per locus, the Illumina error to add to each reads, the version of fastsimcoal used for simulations. This function will create a fastq file for each diploid individual (merging the same couple of N haploid individuals for each locus form the *.fine files) containing the reads for all locus in the set* folder. Finally, execute the file unisci_100job_genotoul.sh (specifying the N° of diploid individuals and the number of set* folders) which will merge all loci for each individuals and randomly shuffle the reads to mimic a real output of an Illumina machine. The final result is one fastq files containing all loci for each diploid individual. These files will have the depth of coverage specified in the R function crea_reads_simcoal and can be subsampled to lower it (since the reads have been shuffled). 
+## (3) Generate fastq
+
+Folder ***Step3_genera_fastq***
+To Generate the fastq: 
+1. **Execute** *lancia_100job.sh*. This runs the R script *simula_reads_funzione_da_wholegenome.r* for all loci. In the R function within the script (crea_reads_simcoal), five arguments can be set: **(1)** the emplacement of the file *percorso* (which need not to be changed); **(2)** the length of the restriction enzyme used *lunghezza_enzima*; **(3)** the mean and **(4)** standard deviation of the normal distribution from which to extract the N° of reads per individual per locus *cov_mean* & *cov_sd*; **(5)** the Illumina error to add to each reads *err_illumina* and **(6)** the version of fastsimcoal used for simulations *versione*. This function will create a fastq file for each diploid individual (merging the same couple of N haploid individuals for each locus form the *.fine* files) containing the reads for all locus in the *set* folder.
+2. **Execute** *unisci_100job_genotoul.sh* (specifying the N° of diploid individuals and the number of set* folders). This merges all loci for each individuals and randomly shuffle the reads to mimic a real output of an Illumina machine.
+
+The final result is one fastq files containing all loci for each diploid individual. These files will have the depth of coverage specified in the R function crea_reads_simcoal and can be subsampled to lower it (since the reads have been shuffled). 
+
+ **NOTE:** Scripts need to be executed where the *set* folders are.
