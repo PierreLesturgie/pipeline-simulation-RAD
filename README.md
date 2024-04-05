@@ -1,7 +1,7 @@
 # Pipeline for simulating RADseq loci 
 ----
 
-### Author: Stefano Mona (stefano.mona@mnhn.fr), Professor Ecole Pratique des Hautes Etudes
+#### Author: Stefano Mona (stefano.mona@mnhn.fr), Professor Ecole Pratique des Hautes Etudes
 
 This is a pipeline written for: 
 
