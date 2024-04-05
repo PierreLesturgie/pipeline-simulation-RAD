@@ -1,7 +1,8 @@
 # Pipeline for simulating RADseq loci 
 
-## The pipeline works in **3 steps** : **(1) Simulation**; (2) Digestion; (3) Generation of FASTQ files. 
+### Author: Stefano Mona, Professor Ecole Pratique des Hautes Etudes
 
+The pipeline works in **3 steps** : **(1)** Simulation; **(2)** Digestion; **(3)** Generation of FASTQ files. 
 
 
 ## (1) Simulation
