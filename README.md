@@ -1,14 +1,14 @@
 # Pipeline for simulating RADseq loci 
 
-### The pipeline works in **3 steps** : 
+## The pipeline works in **3 steps** : 
 
 
 
-## - Step 1. Simulation of N haploid individuals from a demographic model (*folder Step1_simulation*)
+### - Step 1. Simulation of N haploid individuals from a demographic model (*folder Step1_simulation*)
 
 Five files are needed, they should be present in the same folder. The demographic model is specified in the file *.par*. 
 
-### To perform the simulations: 
+#### To perform the simulations: 
 1. **Execute** *lancia_6_job.sh*. This splits the job in different nodes of a computer cluster. Each job corresponds to an independent chromosome of the size specified in the *.par* file).
 2. After the simulations has finished and that the full sequence has been written, **execute** *crea_fasta_finali.sh*. This merges all files to create the final *N* files, each containing one haploid sequence (*.fasta*). **Note:** in the *simula_whole_genome_arp_optimised_spezza.r* you need to specify the length of the sequence to be obtained (which needs to correspond to the *.par* file).
 
