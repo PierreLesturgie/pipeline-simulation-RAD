@@ -1,6 +1,16 @@
 # Pipeline for simulating RADseq loci 
+----
 
-### Author: Stefano Mona, Professor Ecole Pratique des Hautes Etudes
+### Author: Stefano Mona (stefano.mona@mnhn.fr), Professor Ecole Pratique des Hautes Etudes
+
+This is a pipeline written for: 
+
+Mona, S., Benazzo, A., Delrieu-Trottin, E., & Lesturgie, P. (2023). Population genetics using low coverage RADseq data in non-model organisms: biases and solutions. https://doi.org/10.22541/au.168252801.19878064/v1
+
+Please cite this paper when using the pipeline. 
+
+----
+
 
 The pipeline works in **3 steps** : **(1)** Simulation; **(2)** Digestion; **(3)** Generation of FASTQ files. 
 
